@@ -346,6 +346,9 @@ class tx_ttaddress_pi1 extends tslib_pibase {
 		$markerArray['###MAINGROUP###']    = $lcObj->stdWrap($address['groups'][0]['title'], $lConf['mainGroup.']);
 		$markerArray['###GROUPLIST###']    = $lcObj->stdWrap($address['groupList'], 			$lConf['groupList.']);
 
+		$markerArray['###TX_NKWADDRESSEXTEND_MAIL2###']    = $lcObj->stdWrap($address['tx_nkwaddressextend_mail2'], 			$lConf['tx_nkwaddressextend_mail2.']); #NKW
+		$markerArray['###TX_NKWADDRESSEXTEND_PHONE2###']    = $lcObj->stdWrap($address['tx_nkwaddressextend_phone2'], 			$lConf['tx_nkwaddressextend_phone2.']); #NKW
+
 			//the image
 		$markerArray['###IMAGE###'] = '';
 		if(!empty($address['image'])) {
