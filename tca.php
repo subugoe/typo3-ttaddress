@@ -7,7 +7,7 @@
 $TCA['tt_address'] = array (
 	'ctrl' => $TCA['tt_address']['ctrl'],
 	'interface' => array (
-		'showRecordFieldList' => 'name,address,building,room,city,zip,region,country,phone,fax,email,www,title,company,image'
+		'showRecordFieldList' => 'genrer,name,address,building,room,city,zip,region,country,phone,fax,email,www,title,company,image'
 	),
 	'feInterface' => $TCA['tt_address']['feInterface'],
 	'columns' => array (
