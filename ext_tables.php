@@ -69,6 +69,7 @@ $TCA['tt_address']['feInterface']['fe_admin_fieldList'] = $fe_admin_fieldListNew
 	// end splitting name
 
 t3lib_extMgm::allowTableOnStandardPages('tt_address');
+t3lib_extMgm::allowTableOnStandardPages('tt_address_group');
 t3lib_extMgm::addToInsertRecords('tt_address');
 
 t3lib_extMgm::addLLrefForTCAdescr('tt_address','EXT:tt_address/locallang_csh_ttaddress.xml');
