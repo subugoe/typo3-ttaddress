@@ -372,7 +372,7 @@ class tx_ttaddress_pi1 extends tslib_pibase {
 		$markerArray['###TX_NKWADDRESSEXTEND_MAIL2###']    = $lcObj->stdWrap($address['tx_nkwaddressextend_mail2'], 			$lConf['tx_nkwaddressextend_mail2.']); #NKW
 		$markerArray['###TX_NKWADDRESSEXTEND_PHONE2###']    = $lcObj->stdWrap($address['tx_nkwaddressextend_phone2'], 			$lConf['tx_nkwaddressextend_phone2.']); #NKW
 
-			//the image
+			// the image
 		$markerArray['###IMAGE###'] = '';
 		if(!empty($address['image'])) {
 			$iConf = $lConf['image.'];
@@ -393,6 +393,14 @@ class tx_ttaddress_pi1 extends tslib_pibase {
 				$markerArray['###IMAGE'.($i == 0 ? '' : $i).'###'] = $lcObj->IMAGE($iConf);
 			}
 
+		} elseif (!empty($lConf['placeholderImage'])) {
+				// we have no image, but a default image
+			$iConf = $lConf['image.'];
+			$iConf['file'] = $lcObj->stdWrap($lConf['placeholderImage'], $lConf['placeholderImage.']);
+			$iConf['altText'] = !empty($iConf['altText']) ? $iConf['altText'] : $address['name'];
+			$iConf['titleText'] = !empty($iConf['titleText']) ? $iConf['titleText'] : $address['name'];
+
+			$markerArray['###IMAGE###'] = $lcObj->IMAGE($iConf);
 		}
 
 			// adds hook for processing of extra item markers
