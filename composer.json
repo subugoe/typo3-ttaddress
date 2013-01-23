@@ -1,0 +1,6 @@
+{
+	"name": "subugue/ttaddress",
+	"require": {
+		"php": ">=5.3.0"
+	}
+}
