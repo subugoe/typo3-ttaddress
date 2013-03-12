@@ -3,7 +3,7 @@
 #
 CREATE TABLE tt_address (
 		uid int(11) unsigned default '0' NOT NULL auto_increment,
-		pid int(11) unsigned default '0' NOT NULL,
+		pid int(11) default '0' NOT NULL,
 		tstamp int(11) unsigned default '0' NOT NULL,
 		hidden tinyint(4) unsigned default '0' NOT NULL,
 		name tinytext NOT NULL,
