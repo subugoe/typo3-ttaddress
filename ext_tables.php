@@ -1,5 +1,7 @@
 <?php
-if (!defined('TYPO3_MODE')) die ('Access denied.');
+if (!defined('TYPO3_MODE')) {
+	die ('Access denied.');
+}
 
 define('TT_ADDRESS_MAX_IMAGES', 6);
 
@@ -53,13 +55,6 @@ $TCA['tt_address_group'] = array(
 	)
 );
 
-
-t3lib_extMgm::addPlugin(
-	array(
-		'LLL:EXT:tt_address/locallang_tca.xml:pi_tt_address',
-		$_EXTKEY . '_pi1'
-	)
-);
 t3lib_extMgm::allowTableOnStandardPages('tt_address');
 t3lib_extMgm::addToInsertRecords('tt_address');
 
@@ -76,7 +71,6 @@ t3lib_extMgm::addStaticFile($_EXTKEY, 'static/pi1/', 'Addresses');
 t3lib_extMgm::addStaticFile($_EXTKEY, 'static/old/', 'Addresses (!!!old, only use if you need to!!!)');
 
 if (TYPO3_MODE == 'BE') {
-	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_ttaddress_pi1_wizicon'] = t3lib_extMgm::extPath($_EXTKEY) . 'pi1/class.tx_ttaddress_pi1_wizicon.php';
 
 	// classes for displaying the group tree and manipulating flexforms
 	include_once(t3lib_extMgm::extPath($_EXTKEY) . 'class.tx_ttaddress_tcefunc_selecttreeview.php');
