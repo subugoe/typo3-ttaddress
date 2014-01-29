@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Substaff" default="build">
+<project name="ttaddress" default="build">
 	<target name="build"
 			depends="prepare,lint,parallelTasks,phpcb"/>
 	<target name="clean" description="Cleanup build artifacts">
@@ -38,8 +38,8 @@
 			</sequential>
 			<antcall target="phpcpd"/>
 			<antcall target="phpcs"/>
-			<antcall target="phpdoc"/>
 			<antcall target="phpdox"/>
+			<antcall target="phploc"/>
 		</parallel>
 	</target>
 	<target name="pdepend"
